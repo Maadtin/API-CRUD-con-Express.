@@ -1,0 +1,22 @@
+.wraper {
+	margin-top: 40px;
+}
+
+.card-container {
+	width: 320px;
+	padding: .5em;
+	border: 1px solid #aaa;
+}
+
+.card-container img {
+	width: 100%;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-container.column {
+	flex-direction: column;
+}

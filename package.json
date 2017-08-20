@@ -1,0 +1,17 @@
+{
+  "name": "crud-node-ajax",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "express-fileupload": "^0.1.4",
+    "express-handlebars": "*",
+    "morgan": "*",
+    "mysql": "*",
+    "serve-favicon": "*"
+  }
+}

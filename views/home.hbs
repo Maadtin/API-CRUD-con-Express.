@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+
+
+<ul class="list-group mb-2">
+	{{#each usuarios}}
+		<li class="list-group-item"><a href="/user/{{id}}">{{nombre}} - {{apellido}} </a></li>
+	{{/each}}
+</ul>
+<a class="btn btn-primary" href="/add-user">Agregar usuario</a>
+
+
+
+
+
+

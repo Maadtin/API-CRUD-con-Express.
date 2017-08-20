@@ -1,0 +1,45 @@
+
+
+<div class="container">
+	<h1>Perfil de {{ nombre }} {{ apellido }} </h1>
+	<div class="card-container">
+		<div class="info-container">
+			<p>Nombre: {{ nombre }}</p>
+			<p>Apellido: {{ apellido }}</p>
+		</div>
+		<div class="img-container">
+			<img class="card-img-top" src="/uploads/{{foto}}" alt="">
+		</div>
+		<div class="button-container column mt-2">
+			<a class="btn btn-success" href="/user/{{ id }}/editar">Editar</a>
+			<a class="btn btn-info mt-2 mb-2" href="/">Volver a lista de usuarios</a>
+			<a id="borrar" data-id="{{ id }}" class="btn btn-danger" href="#">Borrar perfil</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	let borrar = document.getElementById("borrar");
+
+	borrar.addEventListener('click', function (e) {
+		e.preventDefault();
+		if(confirm("Estás seguro de borrar este perfil?")) {
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "/user/borrar", true);
+			xhr.onreadystatechange = function () {
+				if(this.readyState === 4 && this.status === 200 ) {
+					if(this.responseText === "borrado") {
+						location.href = "/"
+					} else {
+						alert("An error has ocurred")
+					}
+				}
+			};
+			xhr.setRequestHeader("Content-type", "application/json");
+			xhr.send(JSON.stringify({id: this.dataset.id}))
+		}
+	})
+</script>
+
+
+	
